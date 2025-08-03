@@ -6,24 +6,24 @@ This is just to try and benchmark the *latency* difference between rusqlite and 
 
 ## Usage
 
-`cargo test -- -Zunstable-options --report-time --ensure-time`
+`cargo test --release -- -Zunstable-options --report-time --ensure-time`
 
 ## My Results
 
 ```
-➜  testasyncsqlite git:(master) ✗ cargo test -- -Zunstable-options --report-time --ensure-time                                                                        [25/08/3|11:09:05]
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
-     Running tests/test_rusqlite.rs (target/debug/deps/test_rusqlite-60326a86102a2654)
+➜  testasyncsqlite git:(master) cargo test --release -- -Zunstable-options --report-time --ensure-time                                                                [25/08/3|11:19:48]
+    Finished `release` profile [optimized] target(s) in 0.06s
+     Running tests/test_rusqlite.rs (target/release/deps/test_rusqlite-d3ca9014eb5b08c5)
 
 running 1 test
-test rusqlite_tests::test_rusqlite ... ok <0.163s>
+test rusqlite_tests::test_rusqlite ... ok <0.069s>
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
 
-     Running tests/test_sqlx.rs (target/debug/deps/test_sqlx-e5d7c49519befc95)
+     Running tests/test_sqlx.rs (target/release/deps/test_sqlx-c03b517d722665ea)
 
 running 1 test
-test sqlx_tests::test_sqlx ... ok <0.455s>
+test sqlx_tests::test_sqlx ... ok <0.402s>
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s
 ```
